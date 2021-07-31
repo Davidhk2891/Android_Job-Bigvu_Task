@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- sizes -->
+    <dimen name="bigvu_2">2dp</dimen>
+    <dimen name="bigvu_4">4dp</dimen>
+    <dimen name="bigvu_6">6dp</dimen>
+    <dimen name="bigvu_8">8dp</dimen>
+
+    <dimen name="bigvu_10">10dp</dimen>
+    <dimen name="bigvu_12">12dp</dimen>
+    <dimen name="bigvu_14">14dp</dimen>
+    <dimen name="bigvu_16">16dp</dimen>
+    <dimen name="bigvu_18">18dp</dimen>
+
+    <dimen name="bigvu_20">20dp</dimen>
+    <dimen name="bigvu_30">30dp</dimen>
+    <dimen name="bigvu_40">40dp</dimen>
+    <dimen name="bigvu_50">50dp</dimen>
+    <dimen name="bigvu_60">60dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="bigvu_text_2">2sp</dimen>
+    <dimen name="bigvu_text_4">4sp</dimen>
+    <dimen name="bigvu_text_6">6sp</dimen>
+    <dimen name="bigvu_text_8">8sp</dimen>
+
+    <dimen name="bigvu_text_10">10sp</dimen>
+    <dimen name="bigvu_text_12">12sp</dimen>
+    <dimen name="bigvu_text_14">14sp</dimen>
+    <dimen name="bigvu_text_16">16sp</dimen>
+    <dimen name="bigvu_text_18">18sp</dimen>
+
+    <dimen name="bigvu_text_20">20sp</dimen>
+
+</resources>

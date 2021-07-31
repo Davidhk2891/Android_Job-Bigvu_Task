@@ -1,3 +1,12 @@
 <resources>
+
     <string name="app_name">BIGVU Task</string>
+    <string name="bigvu_task">BIGVU Task</string>
+
+    <string name="profile_pic">profile pic</string>
+    <string name="author">author</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt augue et hendrerit malesuada. Maecenas dapibus, diam dictum ornare hendrerit, dui dolor accumsan massa, sit amet varius orci libero ut lacus.</string>
+    <string name="trainer">trainer</string>
+    <string name="_23_available_workshops">23 available workshops</string>
+
 </resources>

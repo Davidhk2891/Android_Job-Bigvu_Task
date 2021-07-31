@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/coach_item_cv"
+        android:layout_marginTop="@dimen/bigvu_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bigvu_10"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="@dimen/bigvu_10"
+        app:cardElevation="@dimen/bigvu_20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/bigvu_14">
+
+            <ImageView
+                android:id="@+id/coach_item_image"
+                android:layout_width="@dimen/bigvu_60"
+                android:layout_height="@dimen/bigvu_60"
+                android:contentDescription="@string/profile_pic"
+                android:src="@drawable/ic_baseline_person_24"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/coach_item_author" />
+
+            <TextView
+                android:id="@+id/coach_item_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/author"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/bigvu_8"
+                app:layout_constraintLeft_toRightOf="@+id/coach_item_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/coach_item_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/bigvu_8"
+                android:maxLength="80"
+                android:text="@string/lorem_ipsum"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/coach_item_image"
+                app:layout_constraintTop_toBottomOf="@+id/coach_item_author" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
