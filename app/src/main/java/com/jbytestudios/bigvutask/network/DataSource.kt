@@ -8,12 +8,11 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-//Class for initializing Retrofit 2
 object DataSource {
 
     const val TAG = "DataSource"
 
-    fun fetchData() {
+    fun fetchData(responseInterface: ResponseInterface) {
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(NetworkConstants.BASE_URL)
@@ -22,20 +21,25 @@ object DataSource {
 
         val retrofitData = retrofitBuilder.getWorkshops()
 
-        BIGVULog.i(TAG, "retrofitService")
-        retrofitData.enqueue(object: Callback<List<Workshop>?>{
-            override fun onResponse(call: Call<List<Workshop>?>, response: Response<List<Workshop>?>) {
+        BIGVULog.i(TAG, "fetchData called")
+        retrofitData.enqueue(object: Callback<MutableList<Workshop>?>{
+            override fun onResponse(
+                call: Call<MutableList<Workshop>?>,
+                response: Response<MutableList<Workshop>?>
+            ) {
                 val responseBody = response.body()!!
-
-                //Get the data from the API
-
+                responseInterface.onResponse(responseBody)
+                BIGVULog.i(TAG, "fetchData", responseBody.toString())
             }
 
-            override fun onFailure(call: Call<List<Workshop>?>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<Workshop>?>, t: Throwable) {
                 //Handle failure
                 BIGVULog.i(TAG, "retrofitService", "Error: ${t.message}")
+                t.message?.let { responseInterface.onFailure(it) }
             }
         })
     }
+
+
 
 }

@@ -11,13 +11,21 @@ import com.jbytestudios.bigvutask.R
 import com.jbytestudios.bigvutask.model.Workshop
 import com.jbytestudios.bigvutask.network.ImageManager
 
-class WorkshopAdapter(val context: Context, val workshopList: List<Workshop>): RecyclerView.Adapter<WorkshopAdapter.WorkshopViewHolder>() {
+class WorkshopAdapter(private val context: Context, private val workshopList: List<Workshop>): RecyclerView.Adapter<WorkshopAdapter.WorkshopViewHolder>() {
+
+    var onItemClick: ((Workshop) -> Unit)? = null
 
     //ViewHolder for Workshop. Takes in the inflated view and the onClick behavior
-    class WorkshopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class WorkshopViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var workshopImage: ImageView = itemView.findViewById(R.id.coach_item_image)
         var workshopAuthor: TextView = itemView.findViewById(R.id.coach_item_author)
         var workshopDesc: TextView = itemView.findViewById(R.id.coach_item_description)
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick?.invoke(workshopList[bindingAdapterPosition])
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkshopViewHolder {
@@ -26,7 +34,7 @@ class WorkshopAdapter(val context: Context, val workshopList: List<Workshop>): R
     }
 
     override fun onBindViewHolder(holder: WorkshopViewHolder, position: Int) {
-        ImageManager.loadImage(workshopList[position].imageUrl, holder.workshopImage)
+        ImageManager.loadRoundedImage(workshopList[position].imageUrl, holder.workshopImage)
         holder.workshopAuthor.text = workshopList[position].name
         holder.workshopDesc.text = workshopList[position].description
     }

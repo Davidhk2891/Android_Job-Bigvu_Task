@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface ApiInterface {
 
     @GET(NetworkConstants.END_POINT_WORKSHOPS)
-    fun getWorkshops(): Call<List<Workshop>>
+    fun getWorkshops(): Call<MutableList<Workshop>>
 }
