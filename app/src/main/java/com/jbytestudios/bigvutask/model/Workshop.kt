@@ -3,7 +3,6 @@ package com.jbytestudios.bigvutask.model
 import com.google.gson.annotations.SerializedName
 
 data class Workshop(
-    val id: Long,
 
     val name: String,
     val description: String,

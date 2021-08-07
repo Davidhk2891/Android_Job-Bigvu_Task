@@ -15,12 +15,11 @@ import com.jbytestudios.bigvutask.R
 import com.jbytestudios.bigvutask.adapters.WorkshopAdapter
 import com.jbytestudios.bigvutask.databinding.ActivityMainBinding
 import com.jbytestudios.bigvutask.model.Workshop
+import com.jbytestudios.bigvutask.model.WorkshopConstants
 import com.jbytestudios.bigvutask.network.DataSource
 import com.jbytestudios.bigvutask.network.ResponseInterface
 
 import java.util.*
-
-const val WORKSHOP_ID = "workshop_id"
 
 class MainActivity : AppCompatActivity() {
 
@@ -74,7 +73,13 @@ class MainActivity : AppCompatActivity() {
                 binding.workshopCoachesHeader.headerDynamicText.text = availableWorkshops
                 workshopAdapter.onItemClick = { workshop ->
                     val intent = Intent(applicationContext, WorkshopDetailsActivity()::class.java)
-                    intent.putExtra(WORKSHOP_ID, workshop.id)
+
+                    intent.putExtra(WorkshopConstants.IMAGE_URL, workshop.imageUrl)
+                    intent.putExtra(WorkshopConstants.VIDEO_URL, workshop.video)
+                    intent.putExtra(WorkshopConstants.NAME, workshop.name)
+                    intent.putExtra(WorkshopConstants.DESCRIPTION, workshop.description)
+                    intent.putExtra(WorkshopConstants.TEXT, workshop.text)
+
                     startActivity(intent)
                 }
             }
@@ -121,7 +126,6 @@ class MainActivity : AppCompatActivity() {
 
                     val workshopAdapter = WorkshopAdapter(applicationContext, workshopListCopy.sortedBy { it.name })
                     binding.workshopCoachesList.adapter = workshopAdapter
-
                 }, 300)
                 return false
             }

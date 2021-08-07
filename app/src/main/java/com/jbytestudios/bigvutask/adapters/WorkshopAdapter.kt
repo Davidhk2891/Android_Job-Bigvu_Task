@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jbytestudios.bigvutask.R
 import com.jbytestudios.bigvutask.model.Workshop
-import com.jbytestudios.bigvutask.network.ImageManager
+import com.jbytestudios.bigvutask.network.media.ImageManager
 
 class WorkshopAdapter(private val context: Context, private val workshopList: List<Workshop>): RecyclerView.Adapter<WorkshopAdapter.WorkshopViewHolder>() {
 

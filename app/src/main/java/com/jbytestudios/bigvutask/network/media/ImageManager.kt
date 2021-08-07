@@ -1,4 +1,4 @@
-package com.jbytestudios.bigvutask.network
+package com.jbytestudios.bigvutask.network.media
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

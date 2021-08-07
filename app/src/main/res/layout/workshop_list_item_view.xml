@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/bigvu_8"
                 android:maxLength="80"
-                android:text="@string/lorem_ipsum"
+                android:text="@string/lorem_ipsum_long"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/coach_item_image"
                 app:layout_constraintTop_toBottomOf="@+id/coach_item_author" />

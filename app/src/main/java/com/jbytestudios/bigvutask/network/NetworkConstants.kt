@@ -8,5 +8,4 @@ object NetworkConstants {
     const val QUERY_DESCRIPTION = "description"
     const val QUERY_TEXT = "text"
     const val QUERY_VIDEO = "video"
-
 }
